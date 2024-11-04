@@ -1,0 +1,29 @@
+﻿<Window x:Class="LabbGym.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LabbGym"
+        mc:Ignorable="d"
+      Title="Bokningssystem" Height="400" Width="600">
+    <Grid>
+        <TextBox x:Name="SearchTextBox" Width="200" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                 TextChanged="SearchTextBox_TextChanged"/>
+
+        <ListView x:Name="PassListView" Margin="10,40,10,60" SelectionMode="Single">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Träningspass" DisplayMemberBinding="{Binding Workout}" Width="120"/>
+                    <GridViewColumn Header="Tid" DisplayMemberBinding="{Binding Time}" Width="120"/>
+                    <GridViewColumn Header="Platser" DisplayMemberBinding="{Binding CurrentParticipants}" Width="80"/>
+                    <GridViewColumn Header="Max Platser" DisplayMemberBinding="{Binding MaxParticipants}" Width="80"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Button Content="Boka Pass" Width="100" Height="30" Margin="10,250,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="BookPass_Click"/>
+        <Button Content="Avboka Pass" Width="100" Height="30" Margin="120,250,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="UnbookPass_Click"/>
+
+        <TextBlock x:Name="MessageTextBlock" Margin="10,290,10,10" HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" Foreground="Red"/>
+    </Grid>
+</Window>
