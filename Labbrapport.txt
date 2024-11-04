@@ -1,0 +1,14 @@
+Objektorienterad Design
+Jag började med att dela upp labben i ett par olika klasser – ungefär som jag gjorde i förra labben. Först skapade jag klassen Pass, där varje träningspass kunde ha sin egen information om tid, typ, och antal platser. Jag höll klassen oberoende; den behövde bara veta vad den själv skulle göra, inget mer. Den kunde hålla koll på om passet var fullt och även uppdatera antal deltagare om någon bokade eller avbokade.
+
+Nästa var User. Jag gjorde den så enkel som möjligt, bara en representant för användaren, med funktioner för att boka och avboka pass. Sedan var det dags för själva Booking-klassen. Den fick ta hand om hela passlistan, göra sökningar, och koppla ihop pass och användare. Här blev LINQ en bra lösning för sökningen – det gjorde att jag enkelt kunde filtrera passlistan på typ och tid.
+
+
+Nästa steg blev GUI. Jag höll det rent och enkelt med en ListView för att visa pass, en sökruta för att filtrera dem, och några knappar för att boka och avboka. Idén var att det skulle vara lätt att använda, men ändå interaktivt. När användaren väljer ett pass kan de boka eller avboka, och de får ett meddelande som bekräftar om bokningen lyckades eller ej.
+
+För att se till att allt i GUI reagerade på rätt sätt använde jag händelsestyrd programmering. Varje gång någon trycker på en knapp eller skriver i sökrutan, triggas en metod som uppdaterar listan direkt. Det blev ett bra sätt att visa att systemet reagerar snabbt på användarens val.
+
+När det gällde att göra koden skalbar var tanken att hålla den modulär, så att fler funktioner enkelt skulle kunna läggas till. Jag såg till att varje klass hade sitt tydliga ansvar, så att det blir enkelt att ändra logiken om det behövs, utan att behöva röra alla delar. Jag lade också till ett enkelt inloggningsfönster så att användarna bara kan boka varje pass en gång.
+
+Reflektion
+Totalt sett tog jag mig an projektet steg för steg. Att börja med en stabil grund – rena, separata klasser och ett GUI som kan ta emot användarens input – gjorde arbetet mycket enklare och smidigare.
